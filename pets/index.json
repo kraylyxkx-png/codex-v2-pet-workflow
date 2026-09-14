@@ -1,0 +1,34 @@
+{
+  "packageVersion": 1,
+  "description": "Portable custom Codex desktop pets.",
+  "pets": [
+    {
+      "id": "armored-warrior",
+      "displayName": "Armored Warrior",
+      "spriteVersionNumber": 1,
+      "grid": "8x9",
+      "directory": "armored-warrior"
+    },
+    {
+      "id": "rikka-takanashi",
+      "displayName": "Rikka Takanashi",
+      "spriteVersionNumber": 1,
+      "grid": "8x9",
+      "directory": "rikka-takanashi"
+    },
+    {
+      "id": "ice-lyre",
+      "displayName": "冰弦",
+      "spriteVersionNumber": 2,
+      "grid": "8x11",
+      "directory": "ice-lyre"
+    },
+    {
+      "id": "eris-boreas",
+      "displayName": "艾莉丝",
+      "spriteVersionNumber": 2,
+      "grid": "8x11",
+      "directory": "eris-boreas"
+    }
+  ]
+}

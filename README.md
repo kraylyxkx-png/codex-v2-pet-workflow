@@ -1,5 +1,36 @@
 # Codex v2 桌宠跨电脑复用流程
 
+## 已打包的四个宠物
+
+仓库中的 `pets/` 目录包含四套可以直接复制到 Codex 的桌宠文件，每套至少由 `pet.json` 和 `spritesheet.webp` 组成；两个旧版角色另外提供 `spritesheet.png` 备用格式：
+
+| ID | 名称 | 图集 |
+| --- | --- | --- |
+| `armored-warrior` | Armored Warrior | v1，8×9 |
+| `rikka-takanashi` | Rikka Takanashi | v1，8×9 |
+| `ice-lyre` | 冰弦 | v2，8×11 |
+| `eris-boreas` | 艾莉丝 | v2，8×11 |
+
+### 在另一台电脑安装
+
+先克隆仓库，然后运行安装脚本。脚本默认使用当前用户的 `~/.codex`（Windows 对应 `%USERPROFILE%\\.codex`），不会读取或提交任何 API 密钥：
+
+```bash
+git clone https://github.com/kraylyxkx-png/codex-v2-pet-workflow.git
+cd codex-v2-pet-workflow
+python scripts/install-pets.py --all
+```
+
+也可以只安装一个或几个：
+
+```bash
+python scripts/install-pets.py --pet ice-lyre --pet eris-boreas
+python scripts/install-pets.py --all --select eris-boreas
+python scripts/install-pets.py --list
+```
+
+安装后重启 Codex Desktop。若只想手动安装，把某个 `pets/<id>/` 目录复制到 `${CODEX_HOME}/pets/<id>/` 即可；`pet.json` 中的 `spriteVersionNumber` 必须与图集版本保持一致。
+
 这套流程把任意角色参考图转换成 Codex v2 桌宠。目标不是简单缩放原图，而是先建立一个稳定的桌宠角色基准，再分别生成动作行、视线方向、透明图集和安装包。
 
 适用范围：安装了 Codex、Python 3.11+ 和 `imagegen` / `hatch-pet` skills 的 macOS、Linux 或 Windows 电脑。不同电脑可以使用不同的图像生成供应商，但认证凭据和 API 地址必须匹配。
